@@ -35,6 +35,8 @@ local JaroUtil = require(game.ServerScriptService.JaroUtil)
 print(JaroUtil:JaroSimilarity("Hello", "hello", {
     caseSensitive = true,
 }))
+print(JaroUtil:JaroDistance("Hello", "hello"))
 
---//Output: 0.8666..
+--//Output 1: 0.8666..
+--//Output 2: 0 --// Because there's no difference (note that this is not case sensitive)
 ```
