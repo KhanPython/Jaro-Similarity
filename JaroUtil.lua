@@ -134,6 +134,6 @@ local Jaro = {}
 
 return {
     JaroSimilarity = JaroSimilarity,
-    JaroDifference = JaroDistance,
+    JaroDistance = JaroDistance,
     JaroWinkler = JaroWinkler,
 }
