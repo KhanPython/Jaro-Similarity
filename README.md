@@ -9,22 +9,32 @@ LuaU Jaro Similarity Implementation from:
 
 Default input configuration:
 ```lua
-    inputConfig = {
-        caseSensitive = false,
-        scalingFactor = 0.1,
-        prefixLength  = 4
-    }
+inputConfig = {
+    caseSensitive = false,
+    scalingFactor = 0.1,
+    prefixLength  = 4
+}
 ```
 
 1. Get Jaro similarity:
 ```lua
-  Jaro:JaroSimilarity(string1: string, string2: string, inputConfig: table)
+Jaro:JaroSimilarity(string1: string, string2: string, inputConfig: table)
 ```
 2. Get Jaro distance: (inverse of Jaro similarity)
 ```lua
-  Jaro:JaroDistance(string1: string, string2: string, inputConfig: table)
+Jaro:JaroDistance(string1: string, string2: string, inputConfig: table)
 ```
 3. Get Jaro Winkler:
 ```lua
-  Jaro:JaroWinkler(string1: string, string2: string, inputConfig: table)
+Jaro:JaroWinkler(string1: string, string2: string, inputConfig: table)
+```
+# Example usage:
+```lua
+local JaroUtil = require(game.ServerScriptService.JaroUtil)
+
+print(JaroUtil:JaroSimilarity("Hello", "hello", {
+    caseSensitive = true,
+}))
+
+--//Output: 0.8666..
 ```
