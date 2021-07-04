@@ -1,9 +1,16 @@
 # Jaro-Similarity
-LuaU Jaro Similarity Implementation from the following sources:
 
-1. http://rosettacode.org/wiki/Jaro_similarity#Python
-2. https://www.geeksforgeeks.org/jaro-and-jaro-winkler-similarity/
-3. https://github.com/ogus/jaro-winkler/blob/master/src/jaro-winkler.js
+**LuaU Jaro Similarity Implementation from the following sources:**
+
+###### 1. http://rosettacode.org/wiki/Jaro_similarity#Python
+###### 2. https://github.com/ogus/jaro-winkler/blob/master/src/jaro-winkler.js 
+###### 3. https://www.geeksforgeeks.org/jaro-and-jaro-winkler-similarity/
+
+
+>Jaro similarity is the measure of similarity between two string, represented by a range from 0 to 1. Where 1 means the strings are equal and 0 - no similarities
+
+>The Jaro-Winkler similarity is a string metric measuring edit distance between two strings. Jaro – Winkler Similarity is much similar to Jaro Similarity. They both differ when the prefix of two string match. Jaro – Winkler Similarity uses a prefix scale ‘p’ which gives a more accurate answer when the strings have a common prefix up to a defined maximum length l
+
 
 # Methods:
 
