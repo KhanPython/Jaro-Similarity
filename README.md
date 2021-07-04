@@ -25,27 +25,27 @@ inputConfig = {
 
 ###### Calculate Jaro similarity:
 ```lua
-Jaro:JaroSimilarity(string1: string, string2: string, inputConfig: table)
+.JaroSimilarity(string1: string, string2: string, inputConfig: table)
 ```
 ###### Calculate Jaro distance: (inverse of Jaro similarity)
 ```lua
-Jaro:JaroDistance(string1: string, string2: string, inputConfig: table)
+.JaroDistance(string1: string, string2: string, inputConfig: table)
 ```
 ###### Calculate Jaro Winkler:
 ```lua
-Jaro:JaroWinkler(string1: string, string2: string, inputConfig: table)
+.JaroWinkler(string1: string, string2: string, inputConfig: table)
 ```
 # Example usage:
 ```lua
 local JaroUtil = require(game.ServerScriptService.JaroUtil)
 
-print(JaroUtil:JaroSimilarity("Hello", "hello", {
+print(JaroUtil.JaroSimilarity("Hello", "hello", {
     caseSensitive = true,
 }))
 
-print(JaroUtil:JaroSimilarity("Hello", "Hello")) 
+print(JaroUtil.JaroSimilarity("Hello", "Hello")) 
 
-print(JaroUtil:JaroDistance("Hello", "Bello"))
+print(JaroUtil.JaroDistance("Hello", "Bello"))
 
 --//Output 1: 0.8666..
 --//Output 2: 1
