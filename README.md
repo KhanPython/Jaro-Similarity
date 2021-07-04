@@ -16,15 +16,15 @@ inputConfig = {
 }
 ```
 
-1. Get Jaro similarity:
+1. Calculate Jaro similarity:
 ```lua
 Jaro:JaroSimilarity(string1: string, string2: string, inputConfig: table)
 ```
-2. Get Jaro distance: (inverse of Jaro similarity)
+2. Calculate Jaro distance: (inverse of Jaro similarity)
 ```lua
 Jaro:JaroDistance(string1: string, string2: string, inputConfig: table)
 ```
-3. Get Jaro Winkler:
+3. Calculate Jaro Winkler:
 ```lua
 Jaro:JaroWinkler(string1: string, string2: string, inputConfig: table)
 ```
