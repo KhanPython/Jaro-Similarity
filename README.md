@@ -1,5 +1,5 @@
 # Jaro-Similarity
-LuaU Jaro Similarity Implementation from:
+LuaU Jaro Similarity Implementation from the following sources:
 
     http://rosettacode.org/wiki/Jaro_similarity#Python 
     https://www.geeksforgeeks.org/jaro-and-jaro-winkler-similarity/ 
