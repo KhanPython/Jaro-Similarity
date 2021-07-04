@@ -12,7 +12,7 @@
 >The Jaro-Winkler similarity is a string metric measuring edit distance between two strings. Jaro – Winkler Similarity is much similar to Jaro Similarity. They both differ when the prefix of two string match. Jaro – Winkler Similarity uses a prefix scale ‘p’ which gives a more accurate answer when the strings have a common prefix up to a defined maximum length l
 
 
-# Methods:
+# Overview of methods:
 
 ###### Default input configuration:
 ```lua
