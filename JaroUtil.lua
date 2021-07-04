@@ -14,62 +14,30 @@ local defaultConfig = {
 }
 
 
---//Filter input
-function setConfig(inputConfig) 
-
-    local config = defaultConfig
-
-    if inputConfig ~= nil and typeof(inputConfig) == "table" then
-        for Key, Value in pairs(config) do
-            if inputConfig[Key] ~= nil and typeof(inputConfig[Key]) == typeof(config[Key]) then
-                config[Key] = inputConfig[Key]
-            end
-        end
-        config.scalingFactor = math.min(config.scalingFactor, 0.25);
-    end
-
-    return config
-end
-
-
 
 local Jaro = {}
 
-    --//Calculate Jaro Distance
-    function Jaro:JaroDistance(s: string, t: string, inputConfig): number
-        return 1 - self:JaroSimilarity(s, t, inputConfig)
-    end
 
+    --//Filter input
+    local function setConfig(inputConfig) 
 
-    --//Calculate Jaro winkler
-    function Jaro:JaroWinkler(s: string, t: string, inputConfig): number
+        local config = defaultConfig
 
-        local config = setConfig(inputConfig)
-        local jaro_dist = self:JaroSimilarity(s, t, config)
-
-        if jaro_dist > 0.7 then
-
-            local prefix = 0
-    
-            for i = 1, math.min(string.len(s), string.len(t)) do
-                if string.sub(s, i, i) == string.sub(t, i, i) then
-                    prefix += 1
-                else 
-                    break
+        if inputConfig ~= nil and typeof(inputConfig) == "table" then
+            for Key, Value in pairs(config) do
+                if inputConfig[Key] ~= nil and typeof(inputConfig[Key]) == typeof(config[Key]) then
+                    config[Key] = inputConfig[Key]
                 end
             end
-
-            prefix = math.min(config.prefixLength, prefix);
-
-            jaro_dist += config.scalingFactor * prefix * (1 - jaro_dist);
+            config.scalingFactor = math.min(config.scalingFactor, 0.25);
         end
 
-        return jaro_dist;
+        return config
     end
 
 
     --//Calculate Jaro Similarity
-    function Jaro:JaroSimilarity(s: string, t: string, inputConfig): number
+    local function JaroSimilarity(s: string, t: string, inputConfig): number
 
         local config = setConfig(inputConfig)
         if not config.caseSensitive then
@@ -131,7 +99,41 @@ local Jaro = {}
     end
 
 
+    --//Calculate Jaro Distance
+    local function JaroDistance(s: string, t: string, inputConfig): number
+        return 1 - JaroSimilarity(s, t, inputConfig)
+    end
 
-return Jaro
+
+    --//Calculate Jaro winkler
+    local function JaroWinkler(s: string, t: string, inputConfig): number
+
+        local config = setConfig(inputConfig)
+        local jaro_dist = JaroSimilarity(s, t, config)
+
+        if jaro_dist > 0.7 then
+
+            local prefix = 0
+    
+            for i = 1, math.min(string.len(s), string.len(t)) do
+                if string.sub(s, i, i) == string.sub(t, i, i) then
+                    prefix += 1
+                else 
+                    break
+                end
+            end
+
+            prefix = math.min(config.prefixLength, prefix);
+
+            jaro_dist += config.scalingFactor * prefix * (1 - jaro_dist);
+        end
+
+        return jaro_dist;
+    end
 
 
+return {
+    JaroSimilarity = JaroSimilarity,
+    JaroDifference = JaroDistance,
+    JaroWinkler = JaroWinkler,
+}
