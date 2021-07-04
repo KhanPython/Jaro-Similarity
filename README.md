@@ -1,4 +1,4 @@
-# Jaro-Similarity
+# Jaro-Similarity:
 
 **LuaU Jaro Similarity Implementation from the following sources:**
 
