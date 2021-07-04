@@ -7,7 +7,7 @@ LuaU Jaro Similarity Implementation from the following sources:
 
 # Methods:
 
-Default input configuration:
+###### Default input configuration:
 ```lua
 inputConfig = {
     caseSensitive = false,
@@ -16,15 +16,15 @@ inputConfig = {
 }
 ```
 
-1. Calculate Jaro similarity:
+###### Calculate Jaro similarity:
 ```lua
 Jaro:JaroSimilarity(string1: string, string2: string, inputConfig: table)
 ```
-2. Calculate Jaro distance: (inverse of Jaro similarity)
+###### Calculate Jaro distance: (inverse of Jaro similarity)
 ```lua
 Jaro:JaroDistance(string1: string, string2: string, inputConfig: table)
 ```
-3. Calculate Jaro Winkler:
+###### Calculate Jaro Winkler:
 ```lua
 Jaro:JaroWinkler(string1: string, string2: string, inputConfig: table)
 ```
