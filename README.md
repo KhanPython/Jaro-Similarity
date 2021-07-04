@@ -5,17 +5,26 @@ LuaU Jaro Similarity Implementation from:
     https://www.geeksforgeeks.org/jaro-and-jaro-winkler-similarity/ 
     https://github.com/ogus/jaro-winkler/blob/master/src/jaro-winkler.js
 
-# Methods
+# Methods:
+
+Default input configuration:
+```lua
+    inputConfig = {
+        caseSensitive = false,
+        scalingFactor = 0.1,
+        prefixLength  = 4
+    }
+```
 
 1. Get Jaro similarity:
 ```lua
   Jaro:JaroSimilarity(string1: string, string2: string, inputConfig: table)
 ```
-2. Get Jaro distance (inverse of Jaro similarity)
+2. Get Jaro distance: (inverse of Jaro similarity)
 ```lua
   Jaro:JaroDistance(string1: string, string2: string, inputConfig: table)
 ```
-3. Get Jaro Winkler
+3. Get Jaro Winkler:
 ```lua
   Jaro:JaroWinkler(string1: string, string2: string, inputConfig: table)
 ```
