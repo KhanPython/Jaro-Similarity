@@ -7,9 +7,11 @@
 **]]
 
 export type defaultConfigType = {
+
     caseSensitive: boolean?,
     scalingFactor: number?,
     prefixLength: number?
+
 }
 
 
@@ -31,7 +33,7 @@ end
 
 
 --//Filter input
-local function setConfig(inputConfig: defaultConfigType?) 
+local function setConfig(inputConfig) 
 
     local config = copyShallow(defaultConfig)
 
@@ -149,3 +151,5 @@ return {
     JaroDistance = JaroDistance,
     JaroWinkler = JaroWinkler,
 }
+
+
