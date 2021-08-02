@@ -17,23 +17,23 @@
 ###### Default input configuration:
 ```lua
 inputConfig = {
-    caseSensitive = false,
-    scalingFactor = 0.1,
-    prefixLength  = 4
+    caseSensitive: boolean? = false,
+    scalingFactor: number? = 0.1,
+    prefixLength: number?  = 4
 }
 ```
 
 ###### Calculate Jaro similarity:
 ```lua
-.JaroSimilarity(string1: string, string2: string, inputConfig: table)
+.JaroSimilarity(string1: string, string2: string, inputConfig: inputConfig)
 ```
 ###### Calculate Jaro distance: (inverse of Jaro similarity)
 ```lua
-.JaroDistance(string1: string, string2: string, inputConfig: table)
+.JaroDistance(string1: string, string2: string, inputConfig: inputConfig)
 ```
 ###### Calculate Jaro Winkler:
 ```lua
-.JaroWinkler(string1: string, string2: string, inputConfig: table)
+.JaroWinkler(string1: string, string2: string, inputConfig: inputConfig)
 ```
 # Example usage:
 ```lua
