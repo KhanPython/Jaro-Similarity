@@ -25,15 +25,15 @@ inputConfig = {
 
 ###### Calculate Jaro similarity:
 ```lua
-.JaroSimilarity(string1: string, string2: string, inputConfig: inputConfig)
+.JaroSimilarity(string1: string, string2: string, inputConfig: inputConfig?)
 ```
 ###### Calculate Jaro distance: (inverse of Jaro similarity)
 ```lua
-.JaroDistance(string1: string, string2: string, inputConfig: inputConfig)
+.JaroDistance(string1: string, string2: string, inputConfig: inputConfig?)
 ```
 ###### Calculate Jaro Winkler:
 ```lua
-.JaroWinkler(string1: string, string2: string, inputConfig: inputConfig)
+.JaroWinkler(string1: string, string2: string, inputConfig: inputConfig?)
 ```
 # Example usage:
 ```lua
