@@ -7,13 +7,10 @@
 **]]
 
 export type defaultConfigType = {
-
     caseSensitive: boolean?,
     scalingFactor: number?,
     prefixLength: number?
-
 }
-
 
 
 local defaultConfig: defaultConfigType = {
