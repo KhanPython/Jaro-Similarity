@@ -18,10 +18,20 @@ local defaultConfig = {
 local Jaro = {}
 
 
+    local function copyShallow(t)
+        local newTable = table.create(#t)
+        for i, v in pairs(t) do 
+            newTable[i] = v 
+        end
+
+        return newTable
+    end
+    
+
     --//Filter input
     local function setConfig(inputConfig) 
 
-        local config = defaultConfig
+        local config = copyShallow(defaultConfig)
 
         if inputConfig ~= nil and typeof(inputConfig) == "table" then
             for Key, Value in pairs(config) do
@@ -137,3 +147,5 @@ return {
     JaroDistance = JaroDistance,
     JaroWinkler = JaroWinkler,
 }
+
+
